@@ -1,0 +1,112 @@
+Q5) Create a list containing multiple elements, in case if the element is of the string data type, 
+	then try to delete the element from the list, otherwist create the square of the number and update it in the same list]
+
+myLis = ['hello', 10, 2, 4, 5,13, 12.1, 9.5, 'pav', 'thor']
+index = 0
+while index != len(myLis):
+  if type(myLis[index]) is str:
+    del myLis[index]
+    continue
+  elif type(myLis[index]) is int or type(myLis[index]) is float:
+    myLis[index] = myLis[index]**2
+  index+=1
+
+print(myLis)
+
+
+
+6)Take an input string from a user and return all the unique words from the string
+
+Input = "hey user hey pavan hope you are well. hey you"
+
+output = "hey user pavan hope you are will."
+
+
+string = input("Enter the sentence ")
+lis = []
+new_string = ""
+for word in string.split():
+  if word in lis:
+    continue
+  lis.append(word)
+  new_string += word + " "
+print(new_string)
+
+
+7)In the string find out how many vowels are present with it count
+
+Eg: "Futurense"
+	u->3, e->2
+
+word = 'Futurense'
+dic = dict()
+vowels = 'aeiouAEIOU'
+for letter in word:
+  if letter not in vowels:
+    continue
+  if not dic.get(letter):
+    dic[letter] = 1
+  else:
+    dic[letter] += 1
+print(dic)
+
+
+8)Take input from the user and check for the smallest/ least occurance of the character and show in the final output with its occurance
+
+ in case there is a tie, print any of the count of first character appearance
+
+Eg: "User Bangalore"
+	'U' has count of 1
+
+sentence = input("Enter the sentence: ")
+dic = {}
+
+for letter in sentence:
+  if not dic.get(letter):
+    dic[letter] = 1
+  else:
+    dic[letter] += 1
+    
+mini_value = min(dic.values())
+
+for occurance in dic:
+  if dic[occurance] == mini_value:
+    print(f"{occurance} has a count of {dic[occurance]}")
+    break
+
+print(dic)
+
+9)Check the input string provided by the user, 
+
+in case the string provided is starting with the vowel, 
+we add on 'ing' at the last
+
+ otherwise we add on 'esy' in the end of the string
+
+word = input("Enter the string: ")
+vowel = 'aeiouAEIOU'
+if word[0] in vowel:
+  word += 'ing'
+else:
+  word += 'esy'
+print(word)
+
+10)Create a list of tuple values(only 2 values) and pass it to the dict method
+
+
+keys = [1, 2, 3, 4,5]
+values = ['haha', 'lol', 'abcd', 'javelin','ball']
+lis = list(zip(keys, values))
+print(lis)
+print(dict(lis))
+
+
+11) Verify if an element is in the set
+
+
+myset = {(20,30),40, (10,20),'g','a',19,20,'name','ABC','age','o',30,1919}
+element = (10,20)
+for object in myset:
+  if object == element:
+    print(f"Object found : {object}")
+    break
